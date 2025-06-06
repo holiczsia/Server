@@ -428,6 +428,9 @@ public class DistributedFederationManager implements FederationManager, Service 
 	}
 
 	private synchronized boolean initiateOutgoing(@NotNull FederationOutgoing outgoing, @NotNull ConnectionStatus status) {
+		if (logger.isDebugEnabled()) {
+			logger.debug("run initiateOutgoing for " + outgoing.getDisplayName());
+		}
 		// v2 federation outgoing Connection
 		if (outgoing.getProtocolVersion() == Constants.FIG_FEDERATION) {
 			status.setConnectionStatusValue(ConnectionStatusValue.CONNECTING);

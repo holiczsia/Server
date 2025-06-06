@@ -219,6 +219,10 @@
     <logger name="org.hibernate.engine.jdbc.spi.SqlExceptionHelper" level="OFF"/>
     <logger name="org.springframework.web.socket.config.WebSocketMessageBrokerStats" level="OFF"/>
     <logger name="tak.server.ServerConfiguration" level="INFO"/>
+    <logger name="tak.server.federation.DistributedFederationManager" level="DEBUG" />
+    <logger name="tak.server.federation.FederationServer" level="DEBUG" />
+    <logger name="tak.server.federation.TakFigClient" level="DEBUG" />
+    <logger name="com.bbn.roger.fig.FigProtocolNegotiator" level="DEBUG"/>
     <logger name="org.springframework" level="WARN"/>
     <logger name="org.apache" level="WARN"/>
     <logger name="org.hibernate" level="WARN"/>
@@ -267,7 +271,7 @@
 	<appender name="application_log_async" class="ch.qos.logback.classic.AsyncAppender">
       	<appender-ref ref="application_log"/>
     </appender>
-    <root level="INFO">
+    <root level="DEBUG">
         <appender-ref ref="application_log_async" />
         <appender-ref ref="audit_log_async" />
     </root>
